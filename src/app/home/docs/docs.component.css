@@ -1,0 +1,27 @@
+.text-center{
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  color:#32325d;
+  padding: 5%;
+  font-size: 2em;
+}
+.mat-flat-button,.mat-stroked-button{
+  font-family: "Open Sans", sans-serif;
+  width: 100%;
+  font-weight: 600;
+  border-radius: 4.2px;
+}
+.full-width{
+  width: 100%;
+  height: 100px;
+}
+*{
+  font-family: "Open Sans", sans-serif;
+}
+h1,p{
+  text-align: center;
+}
+p{
+  color: rgba(0,0,0,.6);
+  font-size: 15px;
+}

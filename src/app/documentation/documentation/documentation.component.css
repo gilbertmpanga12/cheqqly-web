@@ -1,0 +1,78 @@
+.navBrand{
+  background-color: #F55;
+  height: 56px;
+  margin: 0;
+  width: 100%;
+}
+.fontisize,h1,h3,p,ul,li,.span-case{
+  font-family: "Open Sans", sans-serif;
+  color: #32325d;
+}
+#content_card{
+  border-radius: 5px;
+  width: 100%;
+  margin-top: -15%;
+}
+.caps-bold{
+  font-weight: 700;
+  color: #32325d;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  text-align: center;
+}
+h3{
+  font-weight: 600;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 0;
+}
+.code-snippet{
+  line-height: 1.6;
+}
+.breaker{
+  margin-bottom: 8px;
+}
+.brand-logo{
+  font-family: "Open Sans", sans-serif;
+  line-height: 26px;
+  font-weight: 900;
+  /* color: #f4f5f7; */
+  font-size: 17px;
+  text-align: center;
+  text-transform: uppercase;
+  /* margin-left: 25%; */
+}
+.example-fill-remaining-space {
+  /* This fills the remaining space, by using flexbox.
+     Every toolbar row uses a flexbox row layout. */
+  flex: 1 1 auto;
+}
+.mat-button{
+  font-family: "Open Sans", sans-serif;
+  font-size: 700;
+  word-spacing: -1px;
+}
+.footer-list{
+  float: left;
+  margin-left: 20%;
+
+}
+.footer-list > li{
+  display: inline;
+  list-style: none;
+
+}
+.footer-list > li > a{
+  padding-left: 7%;
+  text-align: center;
+  color: #757c81;
+
+  text-transform: capitalize;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.7px;
+
+
+}
+.footer-list > li > a:hover{
+  text-decoration: underline;
+}

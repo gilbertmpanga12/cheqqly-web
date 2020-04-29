@@ -1,0 +1,190 @@
+<div [ngStyle]="{'height':'100vh'}">
+  <div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <h1 [ngStyle]="{'font-weight':'400'}">Settings</h1>
+            <p [ngStyle]="{'font-size':'14px'}">
+              <mat-icon [ngStyle]="{'font-size':'15px'}">info</mat-icon>
+             Change credentials,copy mechant-id and other credentials here</p>
+            <mat-divider></mat-divider>
+        </div>
+      </div>
+</div>
+
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-4">
+              <mat-card [ngStyle]="{'width':'100%','height':'auto'}">
+
+                  <mat-card-title [ngStyle]="{'font-size':'1em'}">Profile</mat-card-title>
+                <figure class="figure">
+                    <img src="assets/images/avatar.png"
+                    alt="Your profile picture on cheqqly" height="90px" width="90px"
+                    [ngStyle]="{'border-radius':'50%','position':'absolute','left':'35%',
+                    'margin-top':'5px','cursor':'pointer'}"
+                    >
+                </figure>
+                <br><br><br><br>
+                <div class="card-body">
+
+                    <h5 class="card-title text-center profileName"></h5>
+                    <p *ngIf="showTextLoader"
+                    [ngStyle]="{'text-align':'center'}"
+                    class="fon">loading...</p>
+                    <h1 class="title">{{userName}}</h1>
+                  <form *ngIf="is_form_active" [formGroup]="fullNamesGroup">
+                      <div class="form-group">
+                          <mat-form-field   class="full-width">
+                              <input type="text" matInput placeholder="First name"
+                              formControlName="firstName"
+                              class="form-control"/>
+
+                            </mat-form-field>
+
+                        </div>
+                        <div class="form-group">
+                            <mat-form-field  class="full-width">
+                            <input type="text" matInput placeholder="Last name"
+                             formControlName="lastName"
+                            class="form-control"
+                            /></mat-form-field>
+                          </div>
+                  </form>
+
+
+                    <button type="button"
+
+                    mat-stroked-button color="primary"
+                    *ngIf="!is_form_active"
+                    [ngStyle]="{'margin-left':'35%','font-size':'600'}"
+                    (click)="onEdit()"
+                    class="btn btn-outline-primary">Edit</button>
+
+                    <button type="button"
+                    *ngIf="is_form_active"
+                    mat-flat-button color="primary"
+                    [ngStyle]="{'margin-left':'25%','border-radius':'3.8px','margin-top':'7px'}"
+                    (click)="updateNames()"
+                    class="btn btn-outline-primary">Save changes</button>
+                    <mat-spinner [diameter]="25"
+                    *ngIf="showLoader"
+                    class="spinner"
+                    ></mat-spinner>
+                    <br><br>
+        <p class="text-center text-danger" *ngIf="is_form_active" (click)="resetViews()"
+        [ngStyle]="{'text-align':'center','cursor':'pointer',
+        'color':'#5e72e4','font-weight':'bold','text-decoration':'underline'}"
+        >Cancel</p>
+                </div>
+
+              </mat-card>
+
+          </div>
+
+          <div class="col-8">
+            <mat-card [ngStyle]="{'margin-left':'16px'}">
+
+
+               <mat-card-title [ngStyle]="{'font-size':'1em'}">
+                Merchant id</mat-card-title>
+                <input [value]="merchantId" style="display: none" id="myInput" >
+                <h3
+
+                class="text-center" [ngStyle]="{
+                'font-size':'1em','font-weight':'300'}" >{{merchantId}}</h3>
+
+            </mat-card>
+            <br><br>
+              <mat-card [ngStyle]="{'margin-left':'16px'}">
+
+
+      <mat-card-title [ngStyle]="{'font-size':'1em'}">
+          Account options</mat-card-title>
+      <ul class="custom-list-group">
+          <li class="custom-list-item">
+            <p [ngStyle]="{'font-weight':'bold'}">Email <span
+              (click)="isShown()"
+              class="edit-con">Edit</span>
+              &nbsp;&nbsp;&nbsp;<span
+              (click)="cancelEdit()"
+              [ngClass]="{'isHidden': (hide ? true: false)}"
+              class="edit-con text-danger">Cancel
+
+            </span>
+            </p>
+            {{email}}
+
+            <form [ngClass]="{'isHidden': (hide ? true: false)}" [formGroup]="emailGroup">
+                <div class="form-group">
+                    <mat-form-field  class="full-width">
+                        <input type="text"
+                        matInput
+                        formControlName="email"
+                        placeholder="New email" class="form-control marginize">
+                    </mat-form-field>
+
+                    <br>
+                    <button type="button"
+                    mat-flat-button color="primary"
+                    [ngStyle]="{'border-radius':'3.8px','margin-top':'7px'}"
+                    (click)="editEmail()"
+                    class="btn btn-outline-primary">Save changes</button>
+                    <mat-spinner [diameter]="25"
+                    *ngIf="showLoader2"
+                    class="spinner3"
+                    ></mat-spinner>
+                  </div>
+            </form>
+
+          </li>
+          <li class="custom-list-item">
+              <p [ngStyle]="{'font-weight':'bold'}">Phone number <span
+                (click)="isShown2()"
+                class="edit-con">Edit
+
+
+              </span>
+            &nbsp;&nbsp;&nbsp;<span
+            (click)="cancelEdit2()"
+            [ngClass]="{'isHidden2': (hide2 ? true: false)}"
+            class="edit-con text-danger">Cancel
+
+          </span>
+            </p>
+              {{phoneNumber}}
+              <form [ngClass]="{'isHidden': (hide2 ? true: false)}" [formGroup]="phoneNumberGroup">
+                  <div class="form-group">
+                      <mat-form-field  class="full-width">
+                          <input type="text"
+                          matInput
+                          formControlName="phoneNumber"
+                          placeholder="New phone number" class="form-control marginize">
+
+                      </mat-form-field>
+
+                      <br>
+                      <button type="button"
+                      mat-flat-button color="primary"
+
+                      [ngStyle]="{'border-radius':'3.8px','margin-top':'7px'}"
+                      (click)="editPhoneNumber()"
+                      class="btn btn-outline-primary">Save changes</button>
+
+                      <mat-spinner [diameter]="25"
+                      class="spinner2"
+                      *ngIf="showLoader3"
+                    ></mat-spinner>
+                    </div>
+              </form>
+
+            </li>
+
+        </ul>
+              </mat-card>
+
+          </div>
+        </div>
+  </div>
+
+
+</div>

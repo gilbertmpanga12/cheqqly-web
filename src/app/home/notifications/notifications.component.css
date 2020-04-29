@@ -1,0 +1,14 @@
+#main_card{
+  height: 100px;
+  background: #fff;
+
+}
+h1,h2,h3,h5,table,p{
+  font-family: "Open Sans", sans-serif;
+  color:#32325d;
+}
+.notification,td{
+  font-weight: 400;
+  font-size: .9em;
+  /* font-size: 1.3em; */
+}

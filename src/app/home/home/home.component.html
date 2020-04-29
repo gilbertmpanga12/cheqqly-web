@@ -1,0 +1,193 @@
+<!--
+
+
+ -->
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport="true"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="!(isHandset$ | async)"
+    [disableClose]="true"
+    >
+    <!-- mat-elevation-z2 -->
+    <mat-toolbar  class="navBrand " [ngStyle]="{'background':'#171941'}">
+      <span class="brand-logo" [ngStyle]="{'color':'#fff'}">Cheqqly</span>
+    </mat-toolbar>
+    <mat-nav-list>
+
+     <div class="container">
+       <div class="row" >
+         <div class="col-4">
+<img src="assets/images/avatar.png" class="avatar-con">
+         </div>
+         <div class="col-8">
+
+           <p class="fontisize"
+           routerLink="/app/settings"
+           [ngStyle]="{'font-size':'15.5px','margin-top':'6%',
+           'font-weight':'600','color':'#C0C0C0','text-transform':'capitalize','cursor':'pointer'}"
+           >{{userName}}</p>
+         </div>
+       </div>
+     </div>
+<!-- " -->
+      <a mat-list-item [routerLink]="['/app']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{exact:true}"
+
+       >
+          <mat-icon class="con"
+          [ngStyle]="router.isActive('/app',true) ? {'color':'#fff','margin-right':'20px'} : {'color':'#C0C0C0','margin-right':'20px'}"
+          >dashboard</mat-icon>
+        Dashboard</a>
+        <a mat-list-item
+
+        routerLinkActive="active"
+        [routerLink]="['/app/transactions']">
+            <mat-icon class="con"
+            [ngStyle]="router.isActive('/app/transactions',true) ? {'color':'#fff','margin-right':'20px'} : {'color':'#C0C0C0','margin-right':'20px'}"
+            >compare_arrows</mat-icon>
+          Transactions</a>
+
+          <a mat-list-item [routerLink]="['/app/request-withdraw']"
+          routerLinkActive="active"
+          >
+             <mat-icon class="con"
+             [ngStyle]="router.isActive('/app/request-withdraw',true) ? {'color':'#fff','margin-right':'20px'} : {'color':'#C0C0C0','margin-right':'20px'}">receipt</mat-icon>
+
+             Payout</a>
+
+
+          <a mat-list-item
+
+          routerLinkActive="active"
+          [routerLink]="['/app/settings']">
+              <mat-icon class="con"
+              [ngStyle]="router.isActive('/app/settings',true) ? {'color':'#fff','margin-right':'20px'} : {'color':'#C0C0C0','margin-right':'20px'}">settings</mat-icon>
+            Settings</a>
+
+            <!-- <a mat-list-item [routerLink]="['/app']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{exact:true}"
+
+       >
+          <mat-icon class="con"
+          [ngStyle]="router.isActive('/app',true) ? {'color':'#fff','margin-right':'20px'} : {'color':'#C0C0C0','margin-right':'20px'}"
+          >dashboard</mat-icon>
+        Cheqqly terminal
+
+      </a> -->
+      <a
+      [ngStyle]="{'cursor':'pointer'}"
+        mat-list-item (click)="openDialog()"
+
+         >
+            <mat-icon class="con"
+
+            [ngStyle]="{'color':'#eee','margin-right':'20px'}">code</mat-icon>
+          Install Cheqqly</a>
+
+
+
+            <a mat-list-item
+     target="_blank"
+          routerLinkActive="active"
+          href="https://www.cheqqly.com/doc.html">
+              <mat-icon class="con"
+              [ngStyle]="router.isActive('/app/documentation',true) ? {'color':'#fff','margin-right':'20px'} : {'color':'#C0C0C0','margin-right':'20px'}"
+              >book</mat-icon>
+            Documentation</a>
+
+            <!-- <a mat-list-item href="https://cheqqly-pup.firebaseapp.com/"
+            routerLinkActive="active"
+            >
+               <mat-icon class="con"
+               [ngStyle]="{'color':'#eee','margin-right':'20px'}"
+               >payment</mat-icon>
+  Test demo live</a> -->
+
+
+
+
+    </mat-nav-list>
+  </mat-sidenav>
+ <mat-sidenav #notificationsBar mode="over" position="end" class="notifications">
+<h3 [ngStyle]="{'font-weight':'400','font-size':'20px','text-align':'left','padding-left':'7px'}">Notifications</h3>
+<p [ngStyle]="{'font-weight':'300','text-align':'left','padding-left':'7px',
+'color':'#6c757d','font-size':'15px'
+}">See realtime insights from your paying customers</p>
+<mat-divider></mat-divider>
+<h3  [ngStyle]="{'text-align':'center','font-weight':'400'}">You have 0 notifications</h3>
+<mat-nav-list>
+
+
+
+</mat-nav-list>
+ </mat-sidenav>
+
+  <mat-sidenav-content class="fit" autosize>
+    <mat-toolbar  class="navBrand mat-elevation-z1"
+    [ngStyle]="{'margin-bottom':'9px','position':'fixed','z-index':'1'}"
+    >
+    <!-- <div [ngStyle]="{'border-right':'0.8px solid #fff','height':'25px'}"
+    class="bar-separator"
+    ></div> -->
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon"
+        [ngStyle]="{'color':'#fff'}"
+        >menu</mat-icon>
+      </button>
+      <span class="fontisize" [ngStyle]="{'color':'#fff','font-size':'16px'}">&nbsp;&nbsp;&nbsp;{{title}}</span>
+
+      <span class="example-fill-remaining-space"></span>
+
+      <mat-icon class="icon-cta"
+      (click)="notificationsBar.toggle()"
+      >
+
+        notifications<span class="fontisize"
+
+        ></span></mat-icon>
+        <!-- matBadge="12"
+         matBadgeOverlap="true"
+       matBadgeColor="primary" -->
+<!-- [ngStyle]="{'margin-right':'2%'}" -->
+      <mat-icon class="icon-cta" [matMenuTriggerFor]="menu"
+
+      >more_vert</mat-icon>
+
+<mat-menu #menu="matMenu">
+  <div [ngStyle]="{'width':'180px'}">
+      <button mat-menu-item (click)="signOut()" >
+
+          <span class="fontisize" [ngStyle]="{'font-size':'14px','font-weight':'600'}">
+           <mat-icon>power_settings_new</mat-icon>
+            LOGOUT</span></button>
+          <mat-divider></mat-divider>
+        <button mat-menu-item (click)="goToSettings()">
+
+            <span class="fontisize" [ngStyle]="{'font-size':'14px','font-weight':'600'}">
+                <mat-icon>settings</mat-icon>
+              SETTINGS</span>
+          </button>
+  </div>
+
+
+</mat-menu>
+
+    </mat-toolbar>
+  <section class="fit">
+<br><br><br>
+    <router-outlet #o="outlet"></router-outlet>
+  </section>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

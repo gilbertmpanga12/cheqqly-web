@@ -1,0 +1,76 @@
+.main-card{
+  max-width: 400px;
+  height: auto;
+    border-radius: 6px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    margin-top: 15%;
+    /* padding: 8%; */
+    margin-left:8%;
+  }
+  .cta{
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+
+    color: rgba(0,0,0,0.65);
+  }
+
+  .example-full-width{
+    width: 100%;
+    font-family: "Open Sans", sans-serif;
+  }
+  mat-card-title{
+    /* text-align: center; */
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    line-height: 14px;
+    text-transform: uppercase;
+    line-height: 1.5;
+
+    color: #32325d;
+
+  }
+  mat-card-subtitle{
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    color: #32325d;
+    line-height: 1.5;
+    margin-bottom: 15%;
+
+    font-size: 16px;
+  }
+  .mat-flat-button{
+    font-family: "Open Sans", sans-serif;
+    width: 100%;
+    font-weight: 600;
+    border-radius: 4.2px;
+  }
+  .mat-stroked-button{
+    font-family: "Open Sans", sans-serif;
+    border-radius: 4.2px;
+    width: 50%;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .btn-inner--icon
+  {
+      position: relative;
+      top: 6px;
+
+  }
+  .info{
+    color: #757c81;
+      line-height: 1.4;
+      font-size: 14px;
+      font-weight: 300;
+      margin-left: 0;
+      text-align: left;
+  }
+  #progress-load{
+    position: absolute;
+    position: absolute;
+    top: -0.8px;
+    left: 0px;
+    border-radius: 0.6px;
+  }

@@ -1,0 +1,57 @@
+<mat-card class="main-card mat-elevation-z3">
+    <mat-progress-bar mode="query" id="progress-load"
+    color="accent" *ngIf="showLoader"
+    ></mat-progress-bar>
+    <mat-card-title>Cheqqly</mat-card-title>
+    <mat-card-subtitle>Create your account</mat-card-subtitle>
+
+    <mat-card-content>
+      <form class="example-form" [formGroup]="signUpGroup">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Email" formControlName="email"
+            >
+            <!-- <mat-icon  matSuffix [ngStyle]="{'color':'rgba(0,0,0,p.65)'}">email</mat-icon> -->
+            <mat-error>Email required and must be right format</mat-error>
+          </mat-form-field>
+
+        <br>
+
+        <mat-form-field   class="example-full-width">
+            <!-- <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'"> -->
+
+            <input matInput placeholder="Password" formControlName="password" type="password"
+
+            >
+            <!-- <mat-icon matSuffix (click)="hide = !hide"
+            [ngStyle]="{'color':'rgba(0,0,0,0.65)'}"
+            >visibility</mat-icon> -->
+            <!-- <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon> -->
+          <mat-error>Password required! Must be at least 8 characters</mat-error>
+          </mat-form-field>
+          <br>
+
+        <mat-card-actions>
+            <button mat-flat-button color="primary" (click)="registeUser()">SIGN IN</button>
+        </mat-card-actions>
+        <p class="cta">Already have an account? <strong><a
+          [ngStyle]="{'color':'#1a73e8','text-decoration':'none'}"
+          routerLink="/auth">Sign in</a></strong></p>
+
+        <mat-divider [ngStyle]="{'margin-left':'6%','width':'90%'}"></mat-divider>
+        <p [ngStyle]="{
+          'margin-bottom':'.5%','margin-top':'7%'}" class="info"><strong>Or sign up using these services</strong></p>
+
+
+      </form>
+      <mat-card-actions>
+          <button mat-stroked-button
+          (click)="gmailLogin()"
+          >
+              <span class="btn-inner--icon">
+                  <img src="assets/images/google.svg" height="26px" width="26px">
+                </span>&nbsp;&nbsp;
+                <span class="btn-inner--text">Google</span>
+          </button>
+      </mat-card-actions>
+    </mat-card-content>
+  </mat-card>

@@ -1,0 +1,54 @@
+<div class="container-fluid" [ngStyle]="{'height':'100vh'}">
+  <div class="row">
+    <div class="col-12">
+      <h1 [ngStyle]="{'font-weight':'400'}">Transactions</h1>
+      <p [ngStyle]="{'font-size':'14px'}">
+        <mat-icon [ngStyle]="{'font-size':'14px'}">info</mat-icon>
+        View history of transactions you received from your customers</p>
+      <mat-divider></mat-divider>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+
+<div style="overflow-x:auto;">
+    <mat-spinner
+    *ngIf="showLoader"
+    [diameter]="30"
+    [ngStyle]="{'position':'absolute','left':'45%','bottom':'45%'}"
+    ></mat-spinner>
+    <h3 *ngIf="showEmptyMessage"
+            [ngStyle]="{'font-size':'1.3em','text-align':'center','color':'rgba(0,0,0,.54)','font-weight':'400'}"
+            >You have no transactions yet</h3>
+
+    <table mat-table
+    class="mat-elevation-z2"
+    [dataSource]="dataSource" [ngStyle]="{'width':'100%'}">
+
+
+        <ng-container matColumnDef="message">
+          <th mat-header-cell *matHeaderCellDef>Message</th>
+          <td mat-cell *matCellDef="let element" class="notification">
+            You received a payment of ${{element.amount}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="date">
+          <th mat-header-cell *matHeaderCellDef>Date</th>
+          <td mat-cell *matCellDef="let element"> {{element.date | date}} </td>
+        </ng-container>
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+</div>
+
+
+          <mat-paginator
+          class="mat-elevation-z2"
+          [pageSize]="7"
+          [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+    </div>
+  </div>
+</div>

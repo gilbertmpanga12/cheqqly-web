@@ -1,0 +1,73 @@
+
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-12">
+            <h3 class="fontisize" [ngStyle]="{'font-weight':'500','margin-bottom':'1px'}">Your payments</h3>
+
+
+        </div>
+      </div>
+
+
+  <div class="row" [ngStyle]="{'margin-top':'15px'}">
+
+      <div class="col-4">
+
+          <mat-card class="other-cards"
+          class="mat-elevation-z4"
+          [ngStyle]="{'border-radius': '5px'}"
+          >
+        <mat-card-title [ngStyle]="{'font-size':'1.3em'}">Today</mat-card-title>
+        <mat-card-content>
+            <p *ngIf="showTextLoader" class="fontisize">loading...</p>
+          <h1 class="fig">{{revenue}}</h1>
+
+        </mat-card-content>
+        </mat-card>
+
+      </div>
+      <div class="col-4">
+
+
+          <mat-card class="other-cards"
+          [ngStyle]="{'border-radius': '5px'}"
+          class="mat-elevation-z4"
+          >
+          <mat-card-title [ngStyle]="{'font-size':'1.3em'}">Last 7 days</mat-card-title>
+          <mat-card-content>
+
+              <h1 class="fig">$0</h1>
+
+            </mat-card-content>
+        </mat-card>
+      </div>
+
+      <div class="col-4">
+
+
+        <mat-card class="other-cards"
+        [ngStyle]="{'border-radius': '5px'}"
+        class="mat-elevation-z4"
+        >
+        <mat-card-title [ngStyle]="{'font-size':'1.3em'}">New customers</mat-card-title>
+        <mat-card-content>
+              <p *ngIf="showTextLoader" class="fontisize">loading...</p>
+            <h1 class="fig">{{totalCustomers}}</h1>
+
+          </mat-card-content>
+      </mat-card>
+    </div>
+
+  </div>
+  <div class="row">
+
+      <div class="col-12">
+        <mat-card class="main-dashboard" id="chart">
+            <mat-card-title [ngStyle]="{'font-size':'1.3em'}">Last 30 days <b>(0)</b></mat-card-title>
+            <!-- <div id="responsive-chart"></div> -->
+        </mat-card>
+      </div>
+
+    </div>
+</div>

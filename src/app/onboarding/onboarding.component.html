@@ -1,0 +1,198 @@
+<div class="container-fluid">
+  <div class="row">
+      <div class="col-4"></div>
+    <div class="col-4">
+        <h1 class="text-center"
+        >Let's get started</h1>
+    </div>
+
+  </div>
+  <div class="row">
+<div class="col-2"></div>
+<!-- [ngStyle]="{'border':'1px solid red'}" -->
+      <div class="col-8" >
+          <mat-horizontal-stepper class="fonticize"
+          [linear]="true" #ref
+          >
+              <mat-step label="Install widget" [ngStyle]="{'background':'transparent'}">
+               <div class="row">
+                <!-- <div class="col-2"></div> -->
+                <div class="col-12">
+                  <mat-card [ngStyle]="{'border-radius':'4px'}">
+                    <mat-card-content>
+            <img src="assets/images/1.svg" width="300px" height="200px" class="img">
+
+            <h3 class="info-text">
+                Get cheqqly code snippet on dashboard and set up on your website
+            </h3>
+            <button
+            matStepperNext
+            [ngStyle]="{'width':'100px','margin-left':'80%'}"
+                    class="onboard-cta"
+                    (click)="closeStepper()"
+                    mat-flat-button color="primary">NEXT</button>
+                    </mat-card-content>
+                  </mat-card>
+                </div>
+                <!-- <div class="col-4"></div> -->
+               </div>
+              </mat-step>
+              <mat-step label="Set up account" class="fonticize">
+                  <div class="row">
+                      <!-- <div class="col-2"></div> -->
+                      <div class="col-12">
+                        <mat-card [ngStyle]="{'border-radius':'4px','padding':'2%'}">
+                            <mat-progress-bar mode="query" id="progress-load"
+                            color="accent" *ngIf="showLoader"
+                            ></mat-progress-bar>
+                          <mat-card-subtitle class="fonticize">Complete information about your account</mat-card-subtitle>
+                          <mat-card-content>
+                              <form class="example-form" [formGroup]="profileGroup">
+
+                               <span>
+
+                                  <mat-form-field [ngStyle]="{'width':'48%'}"
+
+                                  >
+                                  <mat-label>Business Name</mat-label>
+                                      <input matInput placeholder="Business name"
+                                      formControlName="businessName"
+                                      >
+                                      <!-- <mat-icon  matSuffix [ngStyle]="{'color':'rgba(0,0,0,p.65)'}">email</mat-icon> -->
+                                      <mat-error>Business name required</mat-error>
+                                    </mat-form-field>
+                               </span>
+
+                                <span><mat-form-field
+                                  class="fonticize"
+                                  [ngStyle]="{'width':'48%','margin-left':'2%'}"
+                                  appearance="outline"
+                                  >
+                                  <mat-label>First Name</mat-label>
+                                    <input matInput placeholder="First name"
+                                    formControlName="firstName"
+                                    >
+                                    <!-- <mat-icon  matSuffix [ngStyle]="{'color':'rgba(0,0,0,p.65)'}">email</mat-icon> -->
+                                    <mat-error>First name required</mat-error>
+                                  </mat-form-field></span>
+
+
+                                <br>
+                               <span>
+                                  <mat-form-field
+                                  [ngStyle]="{'width':'48%'}"
+                                  appearance="outline"
+                                  class="fonticize"
+                                  >
+                                  <mat-label>Last name</mat-label>
+                                      <input matInput placeholder="Last name"
+                                      formControlName="lastName"
+                                      >
+                                      <!-- <mat-icon  matSuffix [ngStyle]="{'color':'rgba(0,0,0,p.65)'}">email</mat-icon> -->
+                                      <mat-error>Last name required</mat-error>
+                                    </mat-form-field>
+                               </span>
+
+                               <span>
+                                  <mat-form-field
+                                  class="fonticize"
+                                  [ngStyle]="{'width':'48%','margin-left':'2%'}"
+
+                                  >
+                                  <mat-label>Country</mat-label>
+                                  <mat-select placeholder="Your country"  formControlName="country">
+                                    <mat-option *ngFor="let country of countries" [value]="country.name"
+
+                                    >
+                                      {{country.name}}
+                                    </mat-option>
+                                  </mat-select>
+                                      <!-- <mat-icon  matSuffix [ngStyle]="{'color':'rgba(0,0,0,p.65)'}">email</mat-icon> -->
+                                      <mat-error>Country required</mat-error>
+                                    </mat-form-field>
+                               </span>
+
+
+                                <mat-card-actions>
+                                    <small
+                                    [ngStyle]="{'color':'red','text-align':'center','display':'none'}"
+                                  >Oops looks like you forgot to setup your form!</small>
+
+                                    <button mat-flat-button color="primary"
+                                    [disabled]="profileGroup.invalid"
+                                    [ngStyle]="{'width':'200px','margin-left':'70%','margin-top':'8%'}"
+                                    (click)="makeProfile()"
+                                    >SUBMIT AND CONTINUE</button>
+
+                                </mat-card-actions>
+
+
+
+
+                              </form>
+                          </mat-card-content>
+                        </mat-card>
+                      </div>
+                      <!-- <div class="col-4"></div> -->
+                     </div>
+              </mat-step>
+              <mat-step label="Withdraw using any service">
+                  <div class="row">
+                      <!-- <div class="col-2"></div> -->
+                      <div class="col-12">
+                        <mat-card [ngStyle]="{'border-radius':'4px'}">
+                          <mat-card-content>
+                  <img src="assets/images/3.svg" width="300px" height="200px" class="img">
+
+                  <h3 class="info-text">
+                      Cheqqly allows you to use your prefered method of withdrawing.
+                      We accept Western union, World remmit etc.
+                  </h3>
+
+                  <button
+                  matStepperNext
+                  [ngStyle]="{'width':'100px','margin-left':'80%'}"
+                          class="onboard-cta"
+                          (click)="closeStepper()"
+                          mat-flat-button color="primary">NEXT</button>
+                          </mat-card-content>
+                        </mat-card>
+                      </div>
+                      <!-- <div class="col-4"></div> -->
+                     </div>
+              </mat-step>
+
+              <mat-step label="Dashboard">
+                  <div class="row">
+                      <!-- <div class="col-2"></div> -->
+                      <div class="col-12">
+                        <mat-card [ngStyle]="{'border-radius':'4px'}">
+                          <mat-card-content>
+                  <img src="assets/images/2.svg" width="300px" height="200px" class="img">
+
+                  <h3 class="info-text">
+                     Get daily,weekly, monthly realtime insights from your paying customers from
+                     the dashboard.
+                  </h3>
+                  <small
+                  [ngStyle]="{'color':'red','text-align':'center'}"
+                  *ngIf="profileGroup.invalid">Oops looks like you forgot to setup your form!</small>
+                  <button
+                  matStepperNext
+                  [ngStyle]="{'width':'100px','margin-left':'43%'}"
+                          class="onboard-cta"
+                          [disabled]="profileGroup.invalid"
+                          (click)="closeStepper()"
+                          mat-flat-button color="primary"
+                          (click)="gotoDashboard()"
+                          >FINISH UP</button>
+                          </mat-card-content>
+                        </mat-card>
+                      </div>
+                      <!-- <div class="col-4"></div> -->
+                     </div>
+                </mat-step>
+            </mat-horizontal-stepper>
+      </div>
+  </div>
+</div>

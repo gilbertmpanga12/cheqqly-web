@@ -1,0 +1,91 @@
+.fonticize{
+  font-family: "Open Sans", sans-serif;
+}
+.text-center{
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 1.8em;
+  margin-top: 12%;
+}
+.info-text{
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.5em;
+  font-weight: 600;
+  color: #32325d;
+  text-align: center;
+  /* line-height: 1px; */
+  padding:2%;
+}
+.img{
+  margin-left: 25%;
+
+}
+.mat-stepper-horizontal, .mat-stepper-vertical{
+  background: transparent;
+}
+.mat-flat-button{
+  font-family: "Open Sans", sans-serif;
+}
+.onboard-cta{
+  margin-top: 5px;
+}
+.extraDetails{
+  border-radius: 4px;
+  width: 100%;
+  margin-right: 3%;
+}
+
+
+
+
+
+.main-card{
+  max-width: 100%;
+  padding-top: 8%;
+  padding-bottom: 8%;
+    border-radius: 6px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    /* margin-top: 15%; */
+    /* padding: 8%; */
+    margin-left:8%;
+  }
+  .cta{
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+
+    color: rgba(0,0,0,0.65);
+  }
+
+  .example-full-width{
+    width: 100%;
+    font-family: "Open Sans", sans-serif;
+  }
+
+
+  .mat-flat-button{
+    font-family: "Open Sans", sans-serif;
+    width: 100%;
+    font-weight: 600;
+    border-radius: 4.2px;
+  }
+
+  .btn-inner--icon
+  {
+      position: relative;
+      top: 6px;
+
+  }
+
+  #progress-load{
+    position: absolute;
+    position: absolute;
+    top: -0.8px;
+    left: 0px;
+    border-radius: 0.6px;
+  }
+
+/* .side-content{
+  position: absolute;
+} */

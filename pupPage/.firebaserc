@@ -1,0 +1,9 @@
+{
+  "projects": {
+    "default": "cheqqly-pup",
+    "devstage0.0.2": "cheqqly-pup",
+    "devstage0.0.3": "cheqqly-pup",
+    "devstage0.0.4": "cheqqly-pup",
+    "devstage0.0.5": "cheqqly-pup"
+  }
+}

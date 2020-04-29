@@ -1,0 +1,93 @@
+<div class="container-fluid" [ngStyle]="{'height':'100vh'}">
+  <div class="row">
+      <div class="col-12">
+          <h1 [ngStyle]="{'font-weight':'400'}">Payouts</h1>
+          <p [ngStyle]="{'font-size':'14px'}">
+            <mat-icon [ngStyle]="{'font-size':'15px'}">info</mat-icon>
+            Initiate payouts to receive transfer money to your bank account</p>
+          <mat-divider></mat-divider>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <mat-card>
+            <mat-progress-bar mode="query" id="progress-load"
+            color="accent" *ngIf="showLoader"
+            ></mat-progress-bar>
+          <mat-card-content [ngStyle]="{'height':'390px'}">
+            <h2 class="available-amount">Amount available</h2>
+            <small *ngIf="showTextLoader" class="fonticize">loading...</small>
+            <h1 class="total">{{revenue}}</h1>
+
+            <!-- <br> -->
+            <aside class="aside-wrapper">
+                <h2 class="available-amount">Payout information to withdraw your earnings*</h2>
+
+                <form [formGroup]="withdrawGroup">
+
+                    <mat-form-field class="full-width">
+                        <input matInput
+                        formControlName="amount"
+                        placeholder="Amount"
+                        >
+                        <mat-error>Missing amount</mat-error>
+                      </mat-form-field>
+
+                      <mat-form-field class="fonticize">
+                          <mat-select placeholder="Payment method" formControlName="withdrawOptions">
+                            <!-- <mat-option>None</mat-option> -->
+                            <mat-option *ngFor="let option of ops" [value]="option"
+                            class="fonticize"
+                            >{{option}}</mat-option>
+                          </mat-select>
+                        </mat-form-field>
+
+
+                        <mat-form-field class="full-width" >
+                            <textarea matInput
+                            formControlName="customWithdraw"
+                            placeholder="Tell us your custom payout details"
+                            ></textarea>
+                          </mat-form-field>
+
+                          <mat-form-field class="full-width">
+                              <input matInput
+                              formControlName="bankAccount"
+                              placeholder="Bank account number if direct bank transfers"
+                              >
+                              <mat-error>Missing bank account number</mat-error>
+                            </mat-form-field>
+
+
+
+                  <mat-form-field class="full-width">
+                    <textarea matInput
+                    formControlName="reason"
+                    placeholder="Reason or any additonal information (Optional)"
+                    ></textarea>
+                  </mat-form-field>
+
+                </form>
+                <button mat-stroked-button
+                [ngStyle]="{'width':'200px','font-weight':'600'}"
+                                  (click)="cancel()"
+                                  >CANCEL</button>
+
+                <button mat-flat-button color="primary"
+                              [disabled]="withdrawGroup.invalid"
+                                    [ngStyle]="{'width':'200px','color':'#fff','font-weight':'600','margin-left':'3%'}"
+                  (click)="sendWithdrawRequest()"
+                >SUBMIT</button>
+              </aside>
+          </mat-card-content>
+          <mat-card-actions>
+
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+
+</div>
+
+

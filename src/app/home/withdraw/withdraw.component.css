@@ -1,0 +1,35 @@
+h1,h2,h3,h5,table,button, .mat-card, .mat-flat-button,small,p {
+  font-family: "Open Sans", sans-serif;
+  color:#32325d;
+}
+.fonticize{
+  font-family: "Open Sans", sans-serif;
+}
+.available-amount{
+  font-weight: 300;
+  font-size: 16px;
+}
+.total{
+
+  color: #32325d;
+  font-weight: 100;
+  font-size: 3em;
+}
+.full-width{
+  width: 100%;
+  font-family: "Open Sans", sans-serif;
+}
+.aside-wrapper{
+  display: inline-block;
+  position: absolute;
+  right: 12px;
+  top: 2px;
+  width: 60%;
+}
+#progress-load{
+  position: absolute;
+  position: absolute;
+  top: -0.8px;
+  left: 0px;
+  border-radius: 0.6px;
+}

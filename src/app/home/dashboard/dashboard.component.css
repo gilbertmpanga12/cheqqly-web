@@ -1,0 +1,42 @@
+.main-dashboard{
+  height: 40px;
+
+  /* margin-left: 40px; */
+  border-radius: 5px;
+  width: 100%;
+}
+.other-cards{
+
+  height: 148px;
+  max-height: 200px;
+  margin-left: 6px;
+
+}
+
+.mat-card-title{
+  font-family: "Open Sans", sans-serif;
+  color: #32325d;
+  font-weight: 500;
+}
+.fig{
+  font-family: "Open Sans", sans-serif;
+  color: #32325d;
+  font-weight: 200;
+  font-size: 2.5em;
+}
+.fontisize{
+  font-family: "Open Sans", sans-serif;
+  color: #32325d;
+}
+#chart {
+  max-width: 978.9px;
+  margin: 10px auto;
+  margin-left: 0;
+  opacity: 0.9;
+}
+.header-api{
+  font-family: "Open Sans", sans-serif;
+  color: #32325d;
+  font-weight: 400;
+  font-size: 1.2em;
+}

@@ -1,0 +1,24 @@
+.footer-list{
+  float: left;
+  margin-left: 45%;
+
+}
+.footer-list > li{
+  display: inline;
+  list-style: none;
+
+}
+.footer-list > li > a{
+  padding-left: 7%;
+  text-align: center;
+  color: #757c81;
+
+  text-transform: capitalize;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.7px;
+
+
+}
+.footer-list > li > a:hover{
+  text-decoration: underline;
+}

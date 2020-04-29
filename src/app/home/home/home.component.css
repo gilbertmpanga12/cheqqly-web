@@ -1,0 +1,149 @@
+/* #routeContainer{
+  position: relative;
+}
+#routeContainer>*{
+  display: block;
+} */
+
+.fit{
+  height: 100%;
+  background: #eaf3f7;
+
+
+}
+.sidenav-container {
+  height: 100%;
+  z-index:  1;
+}
+
+
+.sidenav {
+  width: 235px;
+
+  /* border-right: .5px solid #dbdbdb; */
+  background-color:  #171941;
+  /* background-image: url('../../../assets/images/dots.png'); */
+  /* repeat: no-repeat; */
+  background-size: cover;
+
+}
+
+/* .mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+
+} */
+/* .mat-toolbar{
+  z-index: 1;
+} */
+.navBrand{
+  background-color: #F55;
+  height: 56px;
+  margin: 0;
+  width: 100%;
+
+
+}
+.fontisize,.mat-list-item,.mat-badge{
+  font-family: "Open Sans", sans-serif;
+}
+.mat-badge{
+  top: 3px;
+  /* background: #a4a6fa; */
+}
+.mat-badge-color{
+  background: #576ae6;
+  color: #576ae6;
+}
+.mat-list-item{
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-size: .900rem;
+  line-height: 1.375rem;
+  font-weight: 300;
+  letter-spacing: .00714em;
+  text-decoration: inherit;
+  text-transform: inherit;
+  height: 40px;
+  margin: 8px;
+  padding: 0 8px;
+  color:#C0C0C0;
+  letter-spacing: 0.4px;
+}
+/* #2962ff */
+.active{
+  color:   #fff;
+  font-weight: 600;
+}
+
+#chart {
+  max-width: 760px;
+  margin: 35px auto;
+  opacity: 0.9;
+}
+
+
+
+.con{
+  margin-left: 0;
+  margin-right: 32px;
+  width: 24px;
+  height: 24px;
+  font-size: 24px;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  fill: currentColor;
+  /* color: #eee; */
+}
+.brand-logo{
+  text-transform: uppercase;
+  font-family: "Open Sans", sans-serif;
+  line-height: 26px;
+  font-weight: 900;
+  /* color: #f4f5f7; */
+  font-size: 17px;
+  text-align: center;
+  margin-left: 25%;
+}
+.example-fill-remaining-space {
+width:65%;
+  /* flex: 1 1 auto; */
+}
+
+.icon-cta{
+  padding-left: 17px;
+  cursor: pointer;
+  color:#fff;
+  font-size: 22px;
+
+}
+.mat-nav-list{
+
+font-weight: 600;
+}
+.avatar-con{
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+}
+
+
+.notifications{
+  width: 300px;
+  font-family: "Open Sans", sans-serif;
+  color: #32325d;
+  height: 100%;
+}
+
+
+@media screen and (max-width: 480px){
+  .bar-separator{
+    display: none;
+  }
+}

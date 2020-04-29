@@ -1,0 +1,94 @@
+<mat-toolbar  class="navBrand mat-elevation-z2"
+[ngStyle]="{'margin-bottom':'9px'}"
+>
+<span class="brand-logo" [ngStyle]="{'color':'#fff','cursor':'pointer'}"
+[routerLink]="['/app']"
+>Cheqqly</span>
+<span class="example-fill-remaining-space"></span>
+<a mat-button
+href="mailto:support@cheqqly.com"
+[ngStyle]="{'color':'#fff','font-weight':'600'}"
+>CONTACT SALES</a>
+</mat-toolbar>
+<br><br><br>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-7">
+<mat-card id="content_card">
+  <mat-card-title class="fontisize caps-bold">
+      Developer docs
+  </mat-card-title>
+  <mat-divider></mat-divider><br>
+  <h3><a href="#" class="fontisize">#1</a> Get Cheqqly snippet
+      from sidebar menu on dashboard and configure</h3>
+  <p [ngStyle]="{'paddin-top':'0','margin-top':'0',
+  'font-weight':'300'}">Cheqqly snippet in configuration requires <b>:</b></p>
+  <ol>
+    <li>Amount&nbsp;&nbsp;&nbsp;<small><i>number*</i></small></li>
+    <li>MerchantId&nbsp;&nbsp;&nbsp;<small><i>string*</i></small></li>
+    <li>Business name&nbsp;&nbsp;&nbsp;<small><i>string*</i></small></li>
+  </ol>
+ <span class="span-case">var config = &#123;</span>
+<p>merchantId: 'YOUR-MERCHANT-ID',&nbsp;</p>
+<p>amount: 'AMOUNT',</p>
+
+<p>businessName: 'YOUR-BUSINESS-NAME'</p>
+  <span class="span-case">&#125;</span>
+  <p [ngStyle]="{'font-weight':'500'}">
+      <i>Use 4242 4242 4242 4242 as a test credit card. This is for testing the sdk if everything
+          is set up well <a href="https://cheqqly-pup.firebaseapp.com/">You can test here</a>*</i>
+  </p>
+  <p [ngStyle]="{'font-weight':'500'}">
+      <i>
+        Get your merchantId from settings
+      </i>
+  </p>
+  <p [ngStyle]="{'font-weight':'500'}">
+     <i>
+        Every amount is 1/100 of Amount. e.g $5 would be configured as 500.
+      1/100 * 500 => would yield $5.
+      Please note that the least amount accepted is $0.50 *
+     </i>
+  </p>
+  <br>
+  <h3>
+      <a href="#">#2</a>
+      Check and test if it returns successful credit/debit charge
+  </h3>
+  <p [ngStyle]="{'paddin-top':'0','margin-top':'0',
+  'font-weight':'300'}">
+      Successfull payment processed should return an Http Response like so:
+  </p>
+  <span class="span-case">&#123;</span>
+<span class="span-case"> message:`Successully paid _amount_ to business_name`</span>
+  <span class="span-case">&#125;</span>
+<br>
+  <p [ngStyle]="{'paddin-top':'20px','margin-top':'0',
+  'font-weight':'300'}">
+      Failed payment processed should return an Http Response like so:
+  </p>
+  <span class="span-case">&#123;</span>
+<span class="span-case">message:`Failed to process payment. Please check if you entered right card
+    details or check is card is credited`</span>
+  <span class="span-case">&#125;</span>
+<br>
+<h3>Common errors</h3>
+<span class="span-case">&#123;</span>
+<span class="span-case">
+    message:`Failed to process payment. Please check if you entered right card
+    details or check is card is credited`
+</span>
+<span class="span-case">&#125;</span>
+</mat-card>
+<mat-card-footer>
+    <ul class="footer-list">
+        <li><a href="https://cheqqly-web.firebaseapp.com">Company</a></li>
+        <!-- <li><a href="https://cheqqly-web.firebaseapp.com">Company</a></li> -->
+        <li><a href="mailto:support@cheqqly.com">Contact</a></li>
+        <li><a>&copy;{{year}}&nbsp;Cheqqly</a></li>
+      </ul>
+</mat-card-footer>
+    </div>
+  </div>
+  </div>

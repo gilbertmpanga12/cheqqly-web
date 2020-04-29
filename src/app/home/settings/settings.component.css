@@ -1,0 +1,91 @@
+.subscribed{
+  background: #2dce89;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  position: absolute;
+  left: 32%;
+  left: 19%;
+  top: 12.3%;
+}
+.unsubscribed{
+  background: #f5365c;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  position: absolute;
+  left: 35%;
+  left: 19%;
+  top: 12.3%;
+}
+.custom-list-group{
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+
+}
+.custom-list-item{
+  padding-top: 2%;
+  padding-bottom: 2%;
+
+}
+.edit-con, .edit-con2{
+  text-decoration: underline;
+  cursor: pointer;
+  /* position: absolute; */
+  /* bottom: 27px; */
+  /* left: 25%; */
+  color:#5e72e4;
+  padding-left: 22px;
+}
+.isHidden,.isHidden2{
+  display: none;
+}
+.marginize{
+  margin-top: 5px;
+}
+h1,h2,h3,h5,table,button, .mat-card,small,p{
+  font-family: "Open Sans", sans-serif;
+  color:#32325d;
+}
+button{
+  text-transform: uppercase;
+}
+.profileName{
+  text-align: center;
+  font-size: 1.3em;
+}
+h6{
+  font-size: .9em;
+}
+.full-width{
+  width: 100%;
+  font-family: "Open Sans", sans-serif;
+  height: 66px;
+}
+.title{
+  font-family: "Open Sans", sans-serif;
+  color: #32325d;
+  font-weight: 300;
+  font-size: 1.5em;
+  text-align: center;
+}
+.spinner{
+  position: absolute;
+  right: 3px;
+  right: 40px;
+  bottom: 106px;
+}
+.spinner2{
+  position: absolute;
+  right: 3px;
+  right: 40px;
+  bottom: 98px;
+}
+.spinner3{
+  position: absolute;
+  right: 40px;
+  bottom: 105px;
+  right: 40px;
+  top: 45%;
+}
